@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>test</title>
+</head>
+
+<body>
+    <div id="input_container">
+        <textarea id="main_input" placeholder="enter recipe here" rows="20" cols="100">
+            20..22 vt, st, bs
+            :15 mischen
+            :60 stg
+            1:10 ruhe
+            :10 formen
+            1 ruhe
+            1 backen 250..220
+        </textarea>
+    </div>
+    <label for="targettime">Zielzeit</label>
+    <input type="datetime-local" id="targettime">
+    <div>
+        <textarea id='output_container' readonly='readonly' rows='20' cols='100'></textarea>
+    </div>
+    <script type="module">
+        import * as planner from './backplan.js';
+        planner.init(
+            {
+                recipe_input: 'main_input',
+                time_input: 'targettime',
+                plan_output: 'output_container'
+            }
+        )
+    </script>
+</body>
+
+</html>
