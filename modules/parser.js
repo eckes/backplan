@@ -48,6 +48,7 @@ function parse_line(a_line) {
         return null;
     }
     return {
+        input: a_line,
         min_minutes: timing.min_minutes,
         max_minutes: timing.max_minutes,
         description: found[2]
