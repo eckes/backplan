@@ -71,6 +71,23 @@ function init( a_options ) {
 
     RECIPE_INPUT = document.getElementById(a_options.recipe_input);
     RECIPE_INPUT.addEventListener('change', (event) => update_plan() );
+    RECIPE_INPUT.value = `# Comment lines start with a hash character (#)
+
+# Plain numbers (without colons) are handled as hours
+# Durations are given with ..
+# This step takes 20 to 22 hours
+20..22 vt, st, bs
+
+# Everything with colons is treated as HOURS:MINUTES
+# HOURS are optional
+# This step takes 15 minutes
+:15 mischen
+:60 stg
+# As mentioned above: this step takes 1 hour and 10 minutes
+1:10 ruhe
+:10 formen
+1 ruhe
+1 backen 250..220`;
 
     PLAN_OUTPUT =  document.getElementById(a_options.plan_output);
 

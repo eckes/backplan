@@ -67,7 +67,10 @@ function parse_data( a_data ) {
         max_minutes: 0,
     };
     for (var line of data) {
-        plan.steps.push(parse_line(line.trim()));
+        const l = parse_line(line.trim())
+        if (l) {
+            plan.steps.push(l);
+        }
     }
 
     plan.steps.forEach( s => { 
