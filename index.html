@@ -18,6 +18,7 @@
     </div>
     <label for="targettime">Zielzeit</label>
     <input type="datetime-local" id="targettime">
+    <button id="clear_input">Clear Input</button>
     <div>
         <textarea id='output_container' readonly='readonly' rows='20' cols='100'></textarea>
     </div>
@@ -27,7 +28,8 @@
             {
                 recipe_input: 'main_input',
                 time_input: 'targettime',
-                plan_output: 'output_container'
+                plan_output: 'output_container',
+                clear_button: 'clear_input'
             }
         )
     </script>

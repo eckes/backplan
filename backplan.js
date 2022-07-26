@@ -53,6 +53,11 @@ function update_plan() {
                             PLAN_OUTPUT );
 }
 
+function clear_input() {
+    RECIPE_INPUT.value="";
+    PLAN_OUTPUT.value="";
+}
+
 function init( a_options ) {
     DATE_PICKER = document.getElementById(a_options.time_input);
     DATE_PICKER.addEventListener('change', event => update_plan() );
@@ -68,6 +73,8 @@ function init( a_options ) {
     RECIPE_INPUT.addEventListener('change', (event) => update_plan() );
 
     PLAN_OUTPUT =  document.getElementById(a_options.plan_output);
+
+    document.getElementById(a_options.clear_button).addEventListener("click", clear_input);
 
     update_plan();
 }
